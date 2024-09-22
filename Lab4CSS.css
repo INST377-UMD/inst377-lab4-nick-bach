@@ -2,30 +2,16 @@ body {
     background-color: rgb(120, 164, 214);
     font-family: 'Times New Roman', Times, serif;
 }
-
-.content-area {
-    width: 70%;
-    float: left;
-    margin: 0;
-}
-
-.content-box {
-    background-color: rgb(174, 0, 255);
-    width: 50%;
-    color: white;
-    padding: 10px;
-    border: 2px solid white;
-}
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 100%; /* Adjust this to control the container's width */
-    gap: 50px; /* Space between items */
+    width: 100%;
+    gap: 50px;
 
 }
 .section {
-    flex: 300px; /* Make the items flexible, with a minimum width of 200px */
+    flex: 300px;
     height: 50px; 
     background-color: rgb(88, 0, 129);
     display: flex;
