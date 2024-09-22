@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>INST377 - Lab 4</title>
+        <link rel = "stylesheet" href="Lab4CSS.css">
+    </head>
+
+    <body>
+        <h1 id="word">INST377 - Lab 4</h1>
+
+
+        <form name="contactForm" onsubmit="return(formValidation())" action="https://www.google.com">
+            <label>First Name</label>
+            <input type="text" placeholder="Name" id="firstName">
+            <br>
+
+            <input type="submit">
+        </form>
+
+
+    <div class="container">
+        <div class="section">
+            <form name = "nameForm">
+                <label for="name"> Name: </label>
+                <input type="text" placeholder="Name" id="firstName" required>
+                <button onclick="alertButton()">Alert Me!</button>
+            </form>
+        </div>
+        <div class="section">
+            <button onclick="changeColor()">Change Color</button>
+        </div>
+        <div class="section">
+            <form name = "validateForm"></form>
+                <label for="name"> Text Tester: </label>
+                <input type="text" placeholder="Text" id="valText" required>
+                <button onclick="validateText()">Validate Text</button>
+            </form>
+        </div>
+        <div class="section">4</div>
+    </div>
+        
+        <script type="text/javascript">
+            function alertButton() {
+                if(document.nameForm.firstName.value === "") {
+                    alert('Enter a First Name!');
+                    return false;
+                }
+                else {
+                    alert('Hi ' + document.nameForm.firstName.value + "!");
+                    return false;
+                }
+                return true;
+            }
+            function changeColor() {
+                if(document.body.style.backgroundColor === 'rgb(120, 164, 214)') {
+                    const t = document.body.style.backgroundColor = 'red';
+                } else {
+                    const t = document.body.style.backgroundColor = 'rgb(120, 164, 214)';
+                }
+            }
+            function validateText() {
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                var inputText = document.forms["validateForm"]["valText"].value;
+
+                if (validation.test(inputText)) {
+                    alert('Sorry, you have special characters. REMOVE THEM!');
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        </script>
+    </body>
+</html>
